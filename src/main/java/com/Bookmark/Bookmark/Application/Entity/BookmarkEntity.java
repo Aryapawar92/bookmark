@@ -24,4 +24,8 @@ public class BookmarkEntity {
     @Column(name = "content")
     private String content;
 
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "user_id", nullable = false) // This creates the FOREIGN KEY column in the 'book_names' table
+    private UserEntity user;
+
 }
